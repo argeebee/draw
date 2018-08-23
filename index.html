@@ -2,54 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>HTML Starter</title>
+    <title>Draw on Canvas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" type="text/css">
     <link rel="stylesheet" href="./dist/css/main.css" type="text/css">
-    <style>
-    canvas{
-      border: 1px solid #000;
-    }
-    </style>
+    
   </head>
   <body>
-    <canvas id="canvas" height="600px" width="800"></canvas>
-    <button id="drawRect">Rect</button>
-    <script>
 
-      var btn = document.getElementById('drawRect');
+    <div class="wrapper">
 
-      btn.addEventListener('click', function(){
-        function randColor(){
-        return '#' + Math.floor(Math.random()*16777215).toString(16);
-      }
-        
-      var rx = Math.random() * 400;
-      var ry = Math.random() * 300;
+      <nav>
 
-      var x = Math.random() * (800 - rx);
-      var y = Math.random() * (600 - ry);
+          <ul>
+            <li id="trackX"></li>
+            
+            <li id="trackY"></li>
+            
+            <li>
+              <button id="btnRect">Rectangle</button>
+            </li>
+            
+            <li>
+              <button id="btnLine">Line</button>
+            </li>
 
-      var radius = Math.random() * 300;
+            <li>
+              <button id="btnCircle">Circle</button>
+            </li>
 
-      var cx = Math.random() * (800 - radius * 2);
-      var cy = Math.random() * (600 - radius * 2);
 
+            <li>
+                <button id="btnPath">Path</button>
+              </li>
 
-      var canvas = document.getElementById('canvas');
-      var ctx = canvas.getContext('2d');
+          </ul>
+
+      </nav>
+
+      <main> </main>
     
-      ctx.fillStyle = randColor();
-      ctx.fillRect(x, y, rx, ry);
-
-      ctx.beginPath();
-      ctx.arc(cx, cy, radius, 0, 2 * Math.PI);
-      ctx.stroke();
-
-
-
-});  
-      
-    </script>
+    </div>
 
     <script src="./dist/js/main.js"></script>
   </body>
