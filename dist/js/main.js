@@ -104,6 +104,9 @@ var draw = (function(){
                 case 'circle':
                     this.drawCircle();
                     break;
+                case 'triangle':
+                    this.drawTriangle();
+                    break;
                 case 'path':
                     this.drawPath();
                     break;
@@ -126,6 +129,20 @@ var draw = (function(){
 
             ctx.beginPath();
             ctx.arc(x1, y1, radius, 0, 2*Math.PI);
+            ctx.stroke();
+            ctx.fill();
+        },
+
+        //Draw Triangle
+        drawTriangle: function(){
+            ctx.strokeStyle = this.randColor();
+            ctx.fillStyle = this.randColor();
+            ctx.beginPath();
+            
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.lineTo((x2 + 125), (y2 / 2));
+            
             ctx.stroke();
             ctx.fill();
         },
@@ -184,6 +201,11 @@ draw.init();
 //draw a rectangle
 document.getElementById('btnRect').addEventListener('click', function(){
     draw.setShape('rectangle');
+});
+
+//draw a triangle
+document.getElementById('btnTri').addEventListener('click', function(){
+    draw.setShape('triangle');
 });
 
 //draw a line
