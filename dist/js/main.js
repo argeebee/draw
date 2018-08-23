@@ -153,6 +153,9 @@ var draw = (function(){
 
             ctx.fillStyle = this.randColor();
             ctx.fillRect(x1, y1, (x2-x1), (y2-y1));
+            ctx.strokeStyle = this.randColor();
+            ctx.lineWidth = 3;
+            ctx.strokeRect(x1, y1, (x2-x1), (y2-y1));
 
             // ctx.fillStyle = 'rgb(200, 0, 0)';
             // ctx.fillRect(10, 10, 55, 50);
