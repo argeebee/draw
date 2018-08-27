@@ -200,37 +200,22 @@ var stack = [];
             ctx.strokeStyle = this.randColor();
             ctx.beginPath();
             ctx.moveTo(x1, y1);
-
             ctx.lineTo(d,e);
             ctx.lineTo(x2, y2);
-
             ctx.lineTo(x1, y1);
             ctx.stroke();
             ctx.fill();
 
-            
-            // ctx.strokeStyle = this.randColor();
-            // ctx.fillStyle = this.randColor();
-            // ctx.beginPath();
-            
-            // ctx.moveTo(x1, y1);
-            // ctx.lineTo(x2, y2);
-            // ctx.lineTo((x2 + 500), (y2 / 2));
-            
-            // ctx.stroke();
-            // ctx.fill();
-
-
             stack.push({
                 shape: 'triangle',
                 coords: {
-                    points: {
+    
                         x1: x1,
                         y1: y1,
                         x2: x2,
                         y2: y2
-                    }
                 },
+                
                 styles: {
                     stroke: ctx.strokeStyle,
                     fill: ctx.fillStyle
@@ -294,7 +279,7 @@ var stack = [];
             ctx.fillStyle = this.randColor();
             ctx.fillRect(x1, y1, (x2-x1), (y2-y1));
             ctx.strokeStyle = this.randColor();
-            ctx.lineWidth = 3;
+            //ctx.lineWidth = 3;
             ctx.strokeRect(x1, y1, (x2-x1), (y2-y1));
            
             stack.push({
@@ -359,6 +344,7 @@ var stack = [];
                         y1=stack[item].coords.y1;
                         x2=stack[item].coords.x2;
                         y2=stack[item].coords.y2;
+                        //ctx.lineWidth = stack[item].
                         ctx.strokeStyle = stack[item].styles.stroke;
                         ctx.fillStyle = stack[item].styles.fill;
                         break;
@@ -464,7 +450,7 @@ draw.getCanvas().addEventListener('mousemove', function(evt){
 });
 
 
-draw.drawRect();
+//draw.drawRect();
 
 //     //Calculate x, y
     
